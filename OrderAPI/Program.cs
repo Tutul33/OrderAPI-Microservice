@@ -1,6 +1,11 @@
+using AdminService.DIServices;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+ConfigureMediatRServices.Register(builder);
+ConfigureRabbitMQServices.Register(builder);
+ConfigureServices.RegisterServices(builder.Services);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
