@@ -1,8 +1,17 @@
 using AdminService.DIServices;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(5006, listenOptions =>
+    {
+        listenOptions.Protocols = HttpProtocols.Http1;
+    });
+});
+
 ConfigureMediatRServices.Register(builder);
 ConfigureRabbitMQServices.Register(builder);
 ConfigureServices.RegisterServices(builder.Services);

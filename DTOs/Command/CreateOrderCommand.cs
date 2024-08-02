@@ -14,7 +14,7 @@ namespace DTOs.Command
         [JsonPropertyName("id")]
         public int Id { get; set; }
         [JsonPropertyName("productName")]
-        public string ProductName { get; set; }
+        public string ProductName { get; set; } = "";
 
         [JsonPropertyName("quantity")]
         public int Quantity { get; set; }

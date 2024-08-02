@@ -9,7 +9,7 @@ namespace DTOs.Response
     public class CreateItemCommandResponse
     {
         public int id { get; set; }
-        public string ItemName { get; set; }
-        public string ItemCategory { get; set; }
+        public string ItemName { get; set; } = "";
+        public string ItemCategory { get; set; } = "";
     }
 }

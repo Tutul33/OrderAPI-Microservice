@@ -11,7 +11,7 @@ namespace DTOs.Command
     public class CreateItemCommand : IRequest<CreateItemCommandResponse>
     {
         public int id { get; set; }
-        public required string ItemName { get; set; }
-        public required string ItemCategory { get; set; }
+        public string ItemName { get; set; } = "";
+        public string ItemCategory { get; set; } = "";
     }
 }

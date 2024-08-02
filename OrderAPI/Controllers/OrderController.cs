@@ -24,5 +24,17 @@ namespace OrderAPI.Controllers
 
             return Ok("Order created and message sent to inventory service.");
         }
+
+        [HttpGet]
+        [Route("GetOrder")]
+        public IActionResult GetOrder()
+        {
+           return Ok("Get List.");
+        }
+        [HttpGet("{everything}")]
+        public IActionResult Get(string everything)
+        {
+            return Ok($"Response from Service 2: {everything}");
+        }
     }
 }
